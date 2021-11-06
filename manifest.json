@@ -1,12 +1,20 @@
 {
     "manifest_version": 2,
     "name": "RecentTabs",
+    "description": "Direct access to recently closed tabs.",
     "version": "0.1.0",
+
+    "icons": {
+        "32": "icons/recentabs.svg",
+        "64": "icons/recentabs.svg",
+        "128": "icons/recentabs.svg"
+    },
 
     "browser_action": {
         "browser_style": true,
         "default_title": "RecentTabs",
-        "default_popup": "dist/index.html"
+        "default_popup": "dist/index.html",
+        "default_icon": "icons/recentabs.svg"
     },
 
     "permissions": [
