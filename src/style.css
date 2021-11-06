@@ -4,21 +4,33 @@
     padding: 0;
 }
 
-.session, .sessionEmpty, .header {
+.session, .sessionEmpty {
+    padding: 0.5em;
+}
+
+.header {
     padding: 1em;
 }
 
 body {
     max-height: 30em;
+    overflow: hidden;
+    min-width: 20em;
 }
 
 .header {
     border-bottom: 1px solid #aaaaaa;
 }
 
+.counter {
+    color: #aaaaaa;
+    margin-left: 1em;
+}
+
 .sessionList {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .session {

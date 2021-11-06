@@ -6,7 +6,7 @@
     "browser_action": {
         "browser_style": true,
         "default_title": "RecentTabs",
-        "default_popup": "/dist/index.html"
+        "default_popup": "dist/index.html"
     },
 
     "permissions": [
