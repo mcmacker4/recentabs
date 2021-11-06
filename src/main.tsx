@@ -1,4 +1,4 @@
-import { h, render } from 'preact'
+import { Fragment, h, render } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 
 import './style.css'
@@ -46,12 +46,16 @@ function Popup() {
     }, [sessList])
 
     return (
-        <div class="sessionlist">
-            { sessList && sessList.length > 0
-                && sessList.map(sess => <Session session={sess} updateCallback={updateCallback} />)
-                || <span class="sessionEmpty">No Recent Tabs</span>
-            }
-        </div>
+        <Fragment>
+            <div class="header">
+                <h3>Recently Closed Tabs</h3>
+            </div>
+            <div class="sessionlist">
+                { sessList && sessList.length > 0
+                    && sessList.map(sess => <Session session={sess} updateCallback={updateCallback} />)
+                }
+            </div>
+        </Fragment>
     )
 }
 

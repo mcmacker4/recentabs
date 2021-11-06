@@ -4,38 +4,45 @@
     padding: 0;
 }
 
+.session, .sessionEmpty, .header {
+    padding: 1em;
+}
+
 body {
-    max-height: 20em;
-    min-width: 20em;
-    overflow-y: auto;
+    max-height: 30em;
+}
+
+.header {
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.sessionList {
+    display: flex;
+    flex-direction: column;
 }
 
 .session {
+    margin: 0.3em;
+    border-radius: 0.6em;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1em;
     cursor: pointer;
-}
-
-.sessionEmpty {
-    padding: 1em;
-    line-height: 1.5em;
-    font-weight: bold;
 }
 
 .session:hover {
     background-color: #cccccc;
 }
 
-.title {
-    max-width: 30em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.session > .favicon {
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 1em;
 }
 
-.favicon {
-    height: 1.5em;
-    margin-right: 1em;
+.session > .title {
+    max-width: 30em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
