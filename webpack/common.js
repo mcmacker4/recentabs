@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/main.tsx',
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
-        filename: 'recent-tabs.js'
+        filename: 'recentabs.js'
     },
     module: {
         rules: [
