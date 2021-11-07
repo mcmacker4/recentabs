@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "RecentTabs",
     "description": "Direct access to recently closed tabs.",
-    "version": "0.1.0",
+    "version": "1.0.0",
 
     "icons": {
         "16": "icons/recentabs16.png",

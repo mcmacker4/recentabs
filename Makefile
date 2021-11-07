@@ -18,4 +18,4 @@ watch: install
 	npm run watch
 
 clean:
-	rm -rf dist/ artifacts/
+	rm -rf dist/

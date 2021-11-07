@@ -1,6 +1,6 @@
 {
   "name": "recent-tabs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Recent Tabs Firefox Extension",
   "main": "src/main.ts",
   "scripts": {
