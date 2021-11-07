@@ -11,6 +11,9 @@ interface SessionElementProps {
 function Session({session, updateCallback}: SessionElementProps) {
     const tab = session.tab
 
+    const faviconUrl = tab.favIconUrl
+        || (tab.url && new URL('/favicon.ico', tab.url).toString())
+
     const clickCallback = useCallback(() => {
         chrome.sessions.restore(tab.sessionId)
         updateCallback()
@@ -18,7 +21,7 @@ function Session({session, updateCallback}: SessionElementProps) {
 
     return (
         <div class="session" onClick={clickCallback}>
-            <img class="favicon" src={tab.favIconUrl} />
+            <img class="favicon" src={faviconUrl} />
             <span class="title">{tab.title}</span>
         </div>
     )

@@ -5,16 +5,16 @@
     "version": "0.1.0",
 
     "icons": {
-        "32": "icons/recentabs.svg",
-        "64": "icons/recentabs.svg",
-        "128": "icons/recentabs.svg"
+        "16": "icons/recentabs16.png",
+        "32": "icons/recentabs32.png",
+        "64": "icons/recentabs64.png",
+        "128": "icons/recentabs128.png"
     },
 
     "browser_action": {
         "browser_style": true,
         "default_title": "RecentTabs",
-        "default_popup": "dist/index.html",
-        "default_icon": "icons/recentabs.svg"
+        "default_popup": "dist/index.html"
     },
 
     "permissions": [
