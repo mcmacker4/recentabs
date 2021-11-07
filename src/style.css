@@ -4,6 +4,32 @@
     padding: 0;
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+    .session:hover {
+        background-color: #ddd;
+    }
+    .header {
+        border-bottom: 1px solid #aaaaaa;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: white;
+    }
+    .session:hover {
+        background-color: #222;
+    }
+    .header {
+        border-bottom: 1px solid #000;
+    }
+}
+
 .session, .sessionEmpty {
     padding: 0.5em;
 }
@@ -18,9 +44,6 @@ body {
     min-width: 20em;
 }
 
-.header {
-    border-bottom: 1px solid #aaaaaa;
-}
 
 .counter {
     color: #aaaaaa;
@@ -34,16 +57,12 @@ body {
 }
 
 .session {
-    margin: 0.3em;
+    margin: 0.1em 0.3em;
     border-radius: 0.6em;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-}
-
-.session:hover {
-    background-color: #cccccc;
 }
 
 .session > .favicon {

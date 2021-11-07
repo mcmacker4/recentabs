@@ -8,14 +8,28 @@ interface SessionElementProps {
     updateCallback: () => void
 }
 
+function getDefaultFaviconUrl(): string {
+    return chrome.runtime.getURL("icons/recentabs32.png")
+}
+
+function getValidFaviconUrl(tab: chrome.tabs.Tab): string {
+    if (tab.favIconUrl)
+        return tab.favIconUrl
+    if (tab.url) {
+        try {
+            return new URL('/favicon.ico', tab.url).toString()
+        } catch (_) {}
+    }
+    return getDefaultFaviconUrl()
+}
+
 function Session({session, updateCallback}: SessionElementProps) {
     const tab = session.tab
 
-    const [faviconUrl, setFaviconUrl] = useState(tab.favIconUrl
-        || (tab.url && new URL('/favicon.ico', tab.url).toString()))
+    const [faviconUrl, setFaviconUrl] = useState(getValidFaviconUrl(tab))
 
     const imgOnErrorCallback = useCallback(() => {
-        setFaviconUrl(chrome.runtime.getURL("icons/recentabs32.png"))
+        setFaviconUrl(getDefaultFaviconUrl())
     }, [tab.favIconUrl])
 
     const clickCallback = useCallback(() => {
