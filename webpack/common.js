@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const LicenseCheckerWebpackPlugin = require('license-checker-webpack-plugin')
 
 module.exports = {
     entry: './src/main.tsx',
@@ -31,6 +32,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.json']
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin(),
+        new LicenseCheckerWebpackPlugin({
+            outputFilename: "ThirdPartyNotices.txt"
+        })
     ]
 }
