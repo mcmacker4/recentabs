@@ -11,8 +11,12 @@ interface SessionElementProps {
 function Session({session, updateCallback}: SessionElementProps) {
     const tab = session.tab
 
-    const faviconUrl = tab.favIconUrl
-        || (tab.url && new URL('/favicon.ico', tab.url).toString())
+    const [faviconUrl, setFaviconUrl] = useState(tab.favIconUrl
+        || (tab.url && new URL('/favicon.ico', tab.url).toString()))
+
+    const imgOnErrorCallback = useCallback(() => {
+        setFaviconUrl(chrome.runtime.getURL("icons/recentabs32.png"))
+    }, [tab.favIconUrl])
 
     const clickCallback = useCallback(() => {
         chrome.sessions.restore(tab.sessionId)
@@ -21,7 +25,7 @@ function Session({session, updateCallback}: SessionElementProps) {
 
     return (
         <div class="session" onClick={clickCallback}>
-            <img class="favicon" src={faviconUrl} />
+            <img class="favicon" src={faviconUrl} onError={imgOnErrorCallback}/>
             <span class="title">{tab.title}</span>
         </div>
     )
@@ -40,11 +44,9 @@ function Popup() {
     const [sessList, setSessList] = useState<chrome.sessions.Session[]>(undefined)
 
     useEffect(() => {
-
         if (sessList == undefined) {
             getRecentTabs().then(list => setSessList(list))
         }
-
     })
 
     const updateCallback = useCallback(() => {
