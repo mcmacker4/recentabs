@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "RecentTabs",
+    "name": "recentabs",
     "description": "Direct access to recently closed tabs.",
     "version": "1.0.0",
 

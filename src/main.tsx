@@ -38,7 +38,7 @@ function Session({session, updateCallback}: SessionElementProps) {
     }, [session])
 
     return (
-        <div class="session" onClick={clickCallback}>
+        <div class="session" title={tab.url} onClick={clickCallback}>
             <img class="favicon" src={faviconUrl} onError={imgOnErrorCallback}/>
             <span class="title">{tab.title}</span>
         </div>
